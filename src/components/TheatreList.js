@@ -8,7 +8,7 @@ const TheatreList = () => {
   const [theatres, setTheatres] = useState([]);
   const loadTheatres = async () => {
     const response = await fetch(
-      `http://localhost:5050/api/show/list?movie=${movieId}`
+      `${process.env.REACT_APP_BACKEND_URL}/api/show/list?movie=${movieId}`
     );
     const theatreList = await response.json();
     setTheatres(theatreList);

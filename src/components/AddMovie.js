@@ -29,7 +29,7 @@ const AddMovie = () => {
 
   const handleAddMovie = async () => {
     try {
-      const res = await fetch("http://localhost:5050/api/movie", {
+      const res = await fetch(`${process.env.REACT_APP_BACKEND_URL}/api/movie`, {
         method: "POST",
         credentials: 'include',
         body: JSON.stringify(movieData),

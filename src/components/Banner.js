@@ -13,7 +13,7 @@ import { Autoplay, Pagination, Navigation } from "swiper/modules";
 export default function Banner() {
   const [allMovies, setMovies] = useState([]);
   const fetchAllMovies = () => {
-    fetch(`http://localhost:5050/api/movie/list?page=2`)
+    fetch(`${process.env.REACT_APP_BACKEND_URL}/api/movie/list?page=2`)
       .then((res) => res.json())
       .then((data) => setMovies(data));
   };

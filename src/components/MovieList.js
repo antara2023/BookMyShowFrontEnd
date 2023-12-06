@@ -13,7 +13,7 @@ const MovieList = () => {
       setMovies(pageWiseMovie);
     } else {
       fetch(
-        `http://localhost:5050/api/movie/list?type=${type}&page=${pageNumber}`
+        `${process.env.REACT_APP_BACKEND_URL}/api/movie/list?type=${type}&page=${pageNumber}`
       )
         .then((res) => res.json())
         .then((data) => {

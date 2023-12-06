@@ -5,7 +5,7 @@ const Show = () => {
   const [showDetail, setShowDetail] = useState({});
   const { showId } = useParams();
   const getShowDetail = async () => {
-    const response = await fetch(`http://localhost:5050/api/show/${showId}`);
+    const response = await fetch(`${process.env.REACT_APP_BACKEND_URL}/api/show/${showId}`);
     const detail = await response.json();
     setShowDetail(detail);
   };

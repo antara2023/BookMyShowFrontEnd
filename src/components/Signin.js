@@ -11,7 +11,7 @@ const SignIn = () => {
   const handleLogin = async (e) => {
     e.preventDefault();
     try {
-      const res = await fetch("http://localhost:5050/api/user/login", {
+      const res = await fetch(`${process.env.REACT_APP_BACKEND_URL}/api/user/login`, {
         method: "POST",
         credentials: 'include',
         body: JSON.stringify({
